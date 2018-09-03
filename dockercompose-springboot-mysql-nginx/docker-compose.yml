@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # nginx:
+   # container_name: v-nginx2
+   # image: nginx:1.13
+   # restart: always
+   # ports:
+   # - 80:80
+   # - 443:443
+   # volumes:
+   # - ./nginx/conf.d:/etc/nginx/conf.d
+   # depends_on:
+     # - tomcat01
+    
+  tomcat01:
+    container_name: tomcat01
+    image: tomcat
+    hostname: tomcat01
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+    ports:
+    - 8088:8080
